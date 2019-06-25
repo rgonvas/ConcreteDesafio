@@ -1,0 +1,14 @@
+<p>
+  repos-usuario works!
+</p>
+
+<div class="row">
+    <div *ngFor="let p of (reposUsuario)" class="col-xs-12 col-sm-6 col-md-3">
+      <a class="desafio-entry">  
+        <span>Location: {{p.owner}}</span>
+        <span>Followers: {{p.html_url}}</span>
+        <span>{{reposUsuario.description}}</span>
+      </a>
+    </div>
+  </div>
+

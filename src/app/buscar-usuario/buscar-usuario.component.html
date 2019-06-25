@@ -1,0 +1,39 @@
+<table mdbTable>
+    <tbody>
+      <tr>
+        <td><span class="Github-Search"> Github </span>
+          <span class="Github-SearchSearch">Search</span></td>
+        <td><form (ngSubmit)="submitSearch()">   
+            <input type="text" [(ngModel)]="searchString" name="searchString" class="Search-Input" id="search" placeholder="Búsqueda de Usuario en Git">
+            <input type="submit" value="Search" class="button" ng-click="searchString"/>
+            <p></p>
+        </form></td>
+      </tr>
+      <tr>
+         <td><img class="user-avatar" src="{{perfilUsuario.avatar_url}}" alt="Avatar" /><br>
+            <span class="user-name">{{perfilUsuario.login}}</span><br>
+            <span class="user-login">{{perfilUsuario.id}}</span><br>
+            <span class="user-login">{{perfilUsuario.company}}</span><br>
+            <span class="user-login">{{perfilUsuario.location}}</span><br>
+            <span class="user-login">{{perfilUsuario.public_repos}}</span><br>
+            <span class="user-login">{{perfilUsuario.followers}}</span><br>    
+          </td>
+          <td> 
+            <div *ngFor="let repo of restRepo.repos" >       
+                <span class="repo-name"> {{repo.name}}</span><br>
+                <span class="repo-description"> {{repo.description}}</span><br>
+                <span class="star-count"> {{repo.stargazers_count}}</span><br>      
+            </div>
+          
+          </td>
+        </tr>
+
+    </tbody>
+  </table>
+
+
+  <div *ngFor="let o of rest.detalleUsuario" >       
+      <span class="repo-name">LOGIN 2  {{o.login}}</span><br>
+      <span class="repo-description"> {{o.company}}</span><br>
+      <span class="star-count"> {{o.company}}</span><br>      
+  </div>
